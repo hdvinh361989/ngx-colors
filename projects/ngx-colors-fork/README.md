@@ -32,13 +32,13 @@ Angular > v13.1.1
 #### Npm
 
 ```shell
-npm install ngx-colors
+npm install ngx-colors-fork
 ```
 
 ##### Load the ngx-colors module in your app module:
 
 ```javascript
-import { NgxColorsModule } from 'ngx-colors';
+import { NgxColorsModule } from 'ngx-colors-fork';
 
 @NgModule({
   ...

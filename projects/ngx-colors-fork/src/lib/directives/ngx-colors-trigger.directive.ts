@@ -14,7 +14,7 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from "@angular/forms";
 import { NgxColor } from "../clases/color";
 
 @Directive({
-  selector: "[ngx-colors-trigger]",
+  selector: "[ngx-colors-fork-trigger]",
   providers: [
     {
       provide: NG_VALUE_ACCESSOR,

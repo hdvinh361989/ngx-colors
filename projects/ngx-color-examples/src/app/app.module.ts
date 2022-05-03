@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NgxColorsModule } from 'projects/ngx-colors/src/public-api';
+import { NgxColorsModule } from 'projects/ngx-colors-fork/src/public-api';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatTabsModule} from '@angular/material/tabs'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';

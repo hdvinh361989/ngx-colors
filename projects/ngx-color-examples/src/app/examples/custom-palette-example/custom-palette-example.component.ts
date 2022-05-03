@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NgxColor } from '../../../../../ngx-colors/src/public-api'
+import { NgxColor } from '../../../../../ngx-colors-fork/src/public-api'
 
 @Component({
   selector: 'app-custom-palette-example',
@@ -14,7 +14,7 @@ export class CustomPaletteExampleComponent {
   colorToAdd:string = '#EC407A';
   colorPalette:Array<any> = [
     {
-      preview: '#9c27b0e0', 
+      preview: '#9c27b0e0',
       variants:['#9c27b0','#9c27b0de','#9c27b0bd','#9c27b09c','#9c27b075','#9c27b047']
     },
     '#00BCD4',

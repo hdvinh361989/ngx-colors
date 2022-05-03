@@ -3,7 +3,7 @@ import { Subscription } from 'rxjs';
 import { NgxColorsTriggerDirective } from './directives/ngx-colors-trigger.directive';
 
 @Component({
-  selector: 'ngx-colors',
+  selector: 'ngx-colors-fork',
   templateUrl: './ngx-colors.component.html',
   styleUrls: ['./ngx-colors.component.scss'],
 })

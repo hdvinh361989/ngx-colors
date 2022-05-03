@@ -100,21 +100,16 @@ export class NgxColorsTriggerDirective implements ControlValueAccessor {
   }
 
   public setColor(color) {
-    this.writeValue(color);
+    if (color !== this.color) {
+      this.color = color;
+      this.change.emit(color);
+      this.onChangeCallback(color);
+    }
     this.input.emit(color);
   }
 
   public sliderChange(color) {
     this.slider.emit(color);
-  }
-
-  get value(): string {
-    return this.color;
-  }
-
-  set value(value: string) {
-    this.setColor(value);
-    this.onChangeCallback(value);
   }
 
   writeValue(value) {

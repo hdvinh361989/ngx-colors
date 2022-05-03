@@ -233,8 +233,8 @@ export class PanelComponent implements OnInit {
         this.TriggerBBox.nativeElement.getBoundingClientRect();
       this.top = viewportOffset.top + viewportOffset.height;
       this.left =
-        viewportOffset.left + 250 > window.innerWidth
-          ? viewportOffset.right - 250
+        viewportOffset.left + 420 > window.innerWidth
+          ? viewportOffset.right - 420
           : viewportOffset.left;
     }
   }

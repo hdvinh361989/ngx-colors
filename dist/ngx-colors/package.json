@@ -1,6 +1,6 @@
 {
-  "name": "ngx-colors",
-  "version": "3.1.1",
+  "name": "ngx-colors-v",
+  "version": "3.2.0",
   "license": "MIT",
   "description": "A beautiful color picker for angular that let you choose from a color palette, using sliders (Hue, Lightness, Alpha sliders) or through text input(hex, rgba, hsla)",
   "peerDependencies": {
@@ -28,23 +28,23 @@
   "dependencies": {
     "tslib": "^2.0.0"
   },
-  "module": "fesm2015/ngx-colors.mjs",
-  "es2020": "fesm2020/ngx-colors.mjs",
-  "esm2020": "esm2020/ngx-colors.mjs",
-  "fesm2020": "fesm2020/ngx-colors.mjs",
-  "fesm2015": "fesm2015/ngx-colors.mjs",
-  "typings": "ngx-colors.d.ts",
+  "module": "fesm2015/ngx-colors-v.mjs",
+  "es2020": "fesm2020/ngx-colors-v.mjs",
+  "esm2020": "esm2020/ngx-colors-v.mjs",
+  "fesm2020": "fesm2020/ngx-colors-v.mjs",
+  "fesm2015": "fesm2015/ngx-colors-v.mjs",
+  "typings": "ngx-colors-v.d.ts",
   "exports": {
     "./package.json": {
       "default": "./package.json"
     },
     ".": {
-      "types": "./ngx-colors.d.ts",
-      "esm2020": "./esm2020/ngx-colors.mjs",
-      "es2020": "./fesm2020/ngx-colors.mjs",
-      "es2015": "./fesm2015/ngx-colors.mjs",
-      "node": "./fesm2015/ngx-colors.mjs",
-      "default": "./fesm2020/ngx-colors.mjs"
+      "types": "./ngx-colors-v.d.ts",
+      "esm2020": "./esm2020/ngx-colors-v.mjs",
+      "es2020": "./fesm2020/ngx-colors-v.mjs",
+      "es2015": "./fesm2015/ngx-colors-v.mjs",
+      "node": "./fesm2015/ngx-colors-v.mjs",
+      "default": "./fesm2020/ngx-colors-v.mjs"
     }
   },
   "sideEffects": false

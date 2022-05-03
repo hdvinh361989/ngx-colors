@@ -42,8 +42,8 @@ export class PanelFactoryService {
       .rootNodes[0] as HTMLElement;
 
     this.overlay = document.createElement("div");
-    this.overlay.id = "ngx-colors-fork-overlay";
-    this.overlay.classList.add("ngx-colors-fork-overlay");
+    this.overlay.id = "ngx-colors-overlay";
+    this.overlay.classList.add("ngx-colors-overlay");
     this.overlay.classList.add(overlayClassName);
     Object.keys(OVERLAY_STYLES).forEach((attr: string) => {
       this.overlay.style[attr] = OVERLAY_STYLES[attr];

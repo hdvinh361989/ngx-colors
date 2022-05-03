@@ -11,7 +11,7 @@ import { examples } from "./const/examples";
 import { snippets } from "./const/snippets";
 import { api } from "./const/api";
 import { FormGroup, FormControl } from "@angular/forms";
-import { NgxColor } from "projects/ngx-colors-fork/src/public-api";
+import { NgxColor } from "projects/ngx-colors/src/public-api";
 @Component({
   selector: "app-root",
   templateUrl: "./app.component.html",

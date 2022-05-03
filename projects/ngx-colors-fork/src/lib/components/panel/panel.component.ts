@@ -29,7 +29,7 @@ import {Hsva} from "../../clases/formats";
 import {NgxColor} from "../../clases/color";
 
 @Component({
-  selector: "ngx-colors-panel",
+  selector: "ngx-colors-fork-panel",
   templateUrl: "./panel.component.html",
   styleUrls: ["./panel.component.scss"],
   animations: [
@@ -384,7 +384,7 @@ export class PanelComponent implements OnInit {
   }
 
   isOutside(event) {
-    return event.target.classList.contains("ngx-colors-overlay");
+    return event.target.classList.contains("ngx-colors-fork-overlay");
   }
 
   onOpenedScroll($event){

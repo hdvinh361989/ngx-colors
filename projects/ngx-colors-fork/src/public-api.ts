@@ -1,5 +1,5 @@
 /*
- * Public API Surface of ngx-colors
+ * Public API Surface of ngx-colors-fork
  */
 export * from './lib/directives/ngx-colors-trigger.directive';
 export * from './lib/ngx-colors.component';

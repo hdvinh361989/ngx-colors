@@ -94,10 +94,6 @@ export class NgxColorsTriggerDirective implements ControlValueAccessor {
     this.panelFactory.removePanel();
   }
 
-  public onChange() {
-    this.onChangeCallback(this.color);
-  }
-
   public setDisabledState(isDisabled: boolean): void {
     this.isDisabled = isDisabled;
     this.triggerRef.nativeElement.style.opacity = isDisabled ? 0.5 : undefined;
@@ -124,7 +120,6 @@ export class NgxColorsTriggerDirective implements ControlValueAccessor {
   writeValue(value) {
     if (value !== this.color) {
       this.color = value;
-      this.onChange();
       this.change.emit(value);
     }
   }

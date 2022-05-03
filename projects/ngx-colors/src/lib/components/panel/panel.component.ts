@@ -316,7 +316,8 @@ export class PanelComponent implements OnInit {
   public changeColor(color: string): void {
     this.setColor(this.service.stringToHsva(color));
     // this.triggerInstance.onChange();
-    this.emitClose("accept");
+    // this.emitClose("accept");
+    this.menu = 1;
   }
 
   public onChangeColorPicker(event: Hsva) {
@@ -352,18 +353,14 @@ export class PanelComponent implements OnInit {
   }
 
   public onColorClick(color) {
-    if (typeof color == "string") {
-      this.changeColor(color);
-    } else {
-      this.variants = color.variants;
-      this.menu = 2;
-    }
+    this.variants = color.variants;
+    this.menu = 2;
   }
 
   public addColor() {
     this.menu = 3;
     this.backupColor = this.color;
-    this.color = "#FF0000";
+    this.color = this.color || "#FF0000";
     this.temporalColor = this.service.stringToHsva(this.color);
   }
 

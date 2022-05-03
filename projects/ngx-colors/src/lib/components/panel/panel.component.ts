@@ -388,7 +388,6 @@ export class PanelComponent implements OnInit {
   }
 
   onOpenedScroll($event){
-    console.log('on scroll');
     $event.stopPropagation();
   }
 }

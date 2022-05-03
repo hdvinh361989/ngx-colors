@@ -839,7 +839,6 @@ class PanelComponent {
         return event.target.classList.contains("ngx-colors-overlay");
     }
     onOpenedScroll($event) {
-        console.log('on scroll');
         $event.stopPropagation();
     }
 }

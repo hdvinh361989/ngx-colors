@@ -1,6 +1,6 @@
 export const DefaultColors = [
   {
-    color: "rojo", preview: "rgba(229,115,115,0.02)", variants:
+    color: "rojo", preview: "#E57373", variants:
       ["#FFEBEE", "#FFCDD2", "#EF9A9A", "#E57373", "#EF5350", "#F44336", "#E53935", "#D32F2F", "#C62828"]
   },
   {

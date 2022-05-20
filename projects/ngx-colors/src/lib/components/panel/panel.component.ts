@@ -22,7 +22,7 @@ import {
 import {isDescendantOrSame} from "../../helpers/helpers";
 import {ColorFormats} from "../../enums/formats";
 import {ConverterService} from "../../services/converter.service";
-import {defaultColors} from "../../helpers/default-colors";
+import {DefaultColors} from "../../helpers/default-colors";
 import {formats} from "../../helpers/formats";
 import {NgxColorsTriggerDirective} from "../../directives/ngx-colors-trigger.directive";
 import {Hsva} from "../../clases/formats";
@@ -115,7 +115,7 @@ export class PanelComponent implements OnInit {
 
   public colorsAnimationEffect = "slide-in";
 
-  public palette = defaultColors;
+  public palette = DefaultColors;
   public variants = [];
 
   public colorFormats = formats;
@@ -218,7 +218,7 @@ export class PanelComponent implements OnInit {
     }
 
     this.previewColor = this.color;
-    this.palette = palette ?? defaultColors;
+    this.palette = palette ?? DefaultColors;
     this.colorsAnimationEffect = animation;
     if (position == "top") {
       let TriggerBBox = this.TriggerBBox.nativeElement.getBoundingClientRect();

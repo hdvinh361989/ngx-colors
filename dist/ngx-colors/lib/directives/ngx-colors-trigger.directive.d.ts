@@ -33,8 +33,6 @@ export declare class NgxColorsTriggerDirective implements ControlValueAccessor {
     setDisabledState(isDisabled: boolean): void;
     setColor(color: any): void;
     sliderChange(color: any): void;
-    get value(): string;
-    set value(value: string);
     writeValue(value: any): void;
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;

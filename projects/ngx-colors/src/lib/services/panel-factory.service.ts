@@ -8,29 +8,36 @@ import {
   ComponentFactory,
   ApplicationRef,
   EmbeddedViewRef,
-  ComponentRef,
+  ComponentRef, InjectionToken,
 } from "@angular/core";
-import { DOCUMENT } from "@angular/common";
-import { PanelComponent } from "../components/panel/panel.component";
-import { OVERLAY_STYLES } from "./overlay-styles";
+import {DOCUMENT} from "@angular/common";
+import {PanelComponent} from "../components/panel/panel.component";
+import {OVERLAY_STYLES} from "./overlay-styles";
+
+export const NGX_COLOR_ATTACH_TO = new InjectionToken('Ngx-color attachTo', {
+  providedIn: 'root',
+  factory: () => void 0
+});
 
 @Injectable()
 export class PanelFactoryService {
   constructor(
     private resolver: ComponentFactoryResolver,
     private applicationRef: ApplicationRef,
-    private injector: Injector
-  ) {}
+    private injector: Injector,
+    @Inject(NGX_COLOR_ATTACH_TO) private attachTo: HTMLElement|Element|string|undefined
+  ) {
+  }
 
   componentRef: ComponentRef<PanelComponent>;
   _factory: ComponentFactory<PanelComponent>;
   overlay;
 
   createPanel(
-    attachTo:string | HTMLElement | Element | undefined,
+    attachTo: string | HTMLElement | Element | undefined = this.attachTo,
     overlayClassName: string | undefined
   ): ComponentRef<PanelComponent> {
-    if (this.componentRef != undefined) {
+    if (this.componentRef !== undefined) {
       this.removePanel();
     }
     const factory: ComponentFactory<PanelComponent> =
@@ -50,9 +57,9 @@ export class PanelFactoryService {
     });
     if (!attachTo) {
       document.body.appendChild(this.overlay);
-    } else if(typeof attachTo === 'string') {
+    } else if (typeof attachTo === 'string') {
       document.getElementById(attachTo).appendChild(this.overlay);
-    }else{
+    } else {
       attachTo.appendChild(this.overlay);
     }
     this.overlay.appendChild(domElem);

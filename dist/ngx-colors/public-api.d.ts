@@ -3,3 +3,4 @@ export * from './lib/ngx-colors.component';
 export * from './lib/ngx-colors.module';
 export * from './lib/clases/color';
 export * from './lib/helpers/default-colors';
+export * from './lib/services/panel-factory.service';

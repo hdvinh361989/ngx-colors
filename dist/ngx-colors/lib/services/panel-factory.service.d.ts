@@ -9,7 +9,7 @@ export declare class PanelFactoryService {
     componentRef: ComponentRef<PanelComponent>;
     _factory: ComponentFactory<PanelComponent>;
     overlay: any;
-    createPanel(attachTo: string | undefined, overlayClassName: string | undefined): ComponentRef<PanelComponent>;
+    createPanel(attachTo: string | HTMLElement | Element | undefined, overlayClassName: string | undefined): ComponentRef<PanelComponent>;
     removePanel(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<PanelFactoryService, never>;
     static ɵprov: i0.ɵɵInjectableDeclaration<PanelFactoryService>;

@@ -27,7 +27,7 @@ export class PanelFactoryService {
   overlay;
 
   createPanel(
-    attachTo: string | undefined,
+    attachTo:string | HTMLElement | Element | undefined,
     overlayClassName: string | undefined
   ): ComponentRef<PanelComponent> {
     if (this.componentRef != undefined) {
@@ -48,10 +48,12 @@ export class PanelFactoryService {
     Object.keys(OVERLAY_STYLES).forEach((attr: string) => {
       this.overlay.style[attr] = OVERLAY_STYLES[attr];
     });
-    if (attachTo) {
-      document.getElementById(attachTo).appendChild(this.overlay);
-    } else {
+    if (!attachTo) {
       document.body.appendChild(this.overlay);
+    } else if(typeof attachTo === 'string') {
+      document.getElementById(attachTo).appendChild(this.overlay);
+    }else{
+      attachTo.appendChild(this.overlay);
     }
     this.overlay.appendChild(domElem);
 

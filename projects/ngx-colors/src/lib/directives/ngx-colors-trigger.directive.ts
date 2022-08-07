@@ -40,7 +40,7 @@ export class NgxColorsTriggerDirective implements ControlValueAccessor {
   @Input() position: "top" | "bottom" = "bottom";
   @Input() hideTextInput: boolean;
   @Input() hideColorPicker: boolean;
-  @Input() attachTo: string | undefined = undefined;
+  @Input() attachTo: string | HTMLElement | Element | undefined = undefined;
   @Input() overlayClassName: string | undefined = undefined;
   @Input() colorPickerControls: "default" | "only-alpha" | "no-alpha" =
     "default";

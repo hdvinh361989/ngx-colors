@@ -1,4 +1,9 @@
-<div class="opened" [style]="positionString" (scroll)="onOpenedScroll($event)" #dialog>
+<div
+  class="opened"
+  [style]="positionString"
+  (scroll)="onOpenedScroll($event)"
+  #dialog
+>
   <section class="main-content-container">
     <article class="left">
       <!--Menu 1-->
@@ -54,7 +59,10 @@
     </article>
 
     <article class="right">
-      <div class="color-picker-wrapper" *ngIf="!hideColorPicker && this.colorPickerControls != 'only-alpha'">
+      <div
+        class="color-picker-wrapper"
+        *ngIf="!hideColorPicker && this.colorPickerControls != 'only-alpha'"
+      >
         <!-- <span [(colorPicker)]="color"></span> -->
         <color-picker
           [controls]="colorPickerControls"
@@ -86,6 +94,9 @@
         (keydown.enter)="accept()"
         #paintInput
       />
+      <span *ngIf="disabled" class="error-message">
+        Color value should be hexa format
+      </span>
     </div>
   </div>
 
@@ -93,7 +104,7 @@
     <button (click)="close()" style="float: right">
       {{ cancelLabel }}
     </button>
-    <button (click)="accept()" style="float: right">
+    <button (click)="accept()" [disabled]="disabled" style="float: right">
       {{ acceptLabel }}
     </button>
   </div>

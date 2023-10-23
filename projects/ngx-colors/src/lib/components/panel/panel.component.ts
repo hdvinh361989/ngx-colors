@@ -19,14 +19,14 @@ import {
   animate,
   keyframes,
 } from "@angular/animations";
-import {isDescendantOrSame} from "../../helpers/helpers";
-import {ColorFormats} from "../../enums/formats";
-import {ConverterService} from "../../services/converter.service";
-import {DefaultColors} from "../../helpers/default-colors";
-import {formats} from "../../helpers/formats";
-import {NgxColorsTriggerDirective} from "../../directives/ngx-colors-trigger.directive";
-import {Hsva} from "../../clases/formats";
-import {NgxColor} from "../../clases/color";
+import { ColorFormats } from "../../enums/formats";
+import { ConverterService } from "../../services/converter.service";
+import { DefaultColors } from "../../helpers/default-colors";
+import { formats } from "../../helpers/formats";
+import { NgxColorsTriggerDirective } from "../../directives/ngx-colors-trigger.directive";
+import { Hsva } from "../../clases/formats";
+import { NgxColor } from "../../clases/color";
+import { HEX_REGEX, VALID_INPUT_REGEX } from "../../constants/contants";
 
 @Component({
   selector: "ngx-colors-panel",
@@ -36,7 +36,7 @@ import {NgxColor} from "../../clases/color";
     trigger("colorsAnimation", [
       transition("void => slide-in", [
         // Initially all colors are hidden
-        query(":enter", style({opacity: 0}), {optional: true}),
+        query(":enter", style({ opacity: 0 }), { optional: true }),
         //slide-in animation
         query(
           ":enter",
@@ -44,22 +44,22 @@ import {NgxColor} from "../../clases/color";
             animate(
               ".3s ease-in",
               keyframes([
-                style({opacity: 0, transform: "translatex(-50%)", offset: 0}),
+                style({ opacity: 0, transform: "translatex(-50%)", offset: 0 }),
                 style({
                   opacity: 0.5,
                   transform: "translatex(-10px) scale(1.1)",
                   offset: 0.3,
                 }),
-                style({opacity: 1, transform: "translatex(0)", offset: 1}),
+                style({ opacity: 1, transform: "translatex(0)", offset: 1 }),
               ])
             ),
           ]),
-          {optional: true}
+          { optional: true }
         ),
       ]),
       //popup animation
       transition("void => popup", [
-        query(":enter", style({opacity: 0, transform: "scale(0)"}), {
+        query(":enter", style({ opacity: 0, transform: "scale(0)" }), {
           optional: true,
         }),
         query(
@@ -68,13 +68,13 @@ import {NgxColor} from "../../clases/color";
             animate(
               "500ms ease-out",
               keyframes([
-                style({opacity: 0.5, transform: "scale(.5)", offset: 0.3}),
-                style({opacity: 1, transform: "scale(1.1)", offset: 0.8}),
-                style({opacity: 1, transform: "scale(1)", offset: 1}),
+                style({ opacity: 0.5, transform: "scale(.5)", offset: 0.3 }),
+                style({ opacity: 1, transform: "scale(1.1)", offset: 0.8 }),
+                style({ opacity: 1, transform: "scale(1)", offset: 1 }),
               ])
             ),
           ]),
-          {optional: true}
+          { optional: true }
         ),
       ]),
     ]),
@@ -88,7 +88,7 @@ export class PanelComponent implements OnInit {
     }
   }
 
-  @HostListener("document:scroll", ['$event'])
+  @HostListener("document:scroll", ["$event"])
   onScroll(event) {
     this.onScreenMovement();
   }
@@ -105,8 +105,7 @@ export class PanelComponent implements OnInit {
   constructor(
     public service: ConverterService,
     private cdr: ChangeDetectorRef
-  ) {
-  }
+  ) {}
 
   color = "#000000";
 
@@ -281,9 +280,9 @@ export class PanelComponent implements OnInit {
 
   public getBackgroundColor(color) {
     if (typeof color == "string") {
-      return {background: color};
+      return { background: color };
     } else {
-      return {background: color?.preview};
+      return { background: color?.preview };
     }
   }
 
@@ -348,7 +347,7 @@ export class PanelComponent implements OnInit {
   }
 
   public onColorClick(color) {
-    if (typeof color === 'string') {
+    if (typeof color === "string") {
       this.changeColor(color);
     } else {
       this.variants = color.variants;
@@ -363,15 +362,15 @@ export class PanelComponent implements OnInit {
     }
   }
 
-  close(){
+  close() {
     this.triggerInstance.close();
-
   }
 
-  accept(){
-    this.triggerInstance.setColor(this.color);
-    this.triggerInstance.close();
-
+  accept() {
+    if (!this.disabled) {
+      this.triggerInstance.setColor(this.color);
+      this.triggerInstance.close();
+    }
   }
 
   public onClickBack() {
@@ -387,7 +386,15 @@ export class PanelComponent implements OnInit {
     return event.target.classList.contains("ngx-colors-overlay");
   }
 
-  onOpenedScroll($event){
+  onOpenedScroll($event) {
     $event.stopPropagation();
+  }
+
+  get disabled(): boolean {
+    return !HEX_REGEX.test(this.color);
+  }
+
+  get showErrorMessage(): boolean {
+    return !VALID_INPUT_REGEX.test(this.color);
   }
 }

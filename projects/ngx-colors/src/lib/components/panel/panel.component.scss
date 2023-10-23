@@ -1,16 +1,20 @@
 @import "../../shared/variables.scss";
+
 :host {
   position: fixed;
   z-index: 2001;
 }
+
 .hidden {
   display: none;
 }
+
 .button {
   display: flex;
   align-items: center;
   justify-content: center;
 }
+
 $radius: 5px;
 
 .top {
@@ -37,7 +41,9 @@ $radius: 5px;
     color: #222222;
     border-radius: 3px;
     line-height: 20px;
+    cursor: pointer;
   }
+
   button:hover,
   .button:hover {
     background-color: rgba(0, 0, 0, 0.05);
@@ -49,8 +55,14 @@ $radius: 5px;
       cubic-bezier(0.35, 0, 0.25, 1);
     transition-delay: 0s, 0s;
   }
+
   button:focus {
     outline: none;
+  }
+
+  button:disabled {
+    color: #aaa;
+    background: #ddd;
   }
 
   .colors {
@@ -58,6 +70,7 @@ $radius: 5px;
     flex-wrap: wrap;
     align-items: center;
     margin: 15px;
+
     .circle {
       $size: 34px;
       height: $size;
@@ -65,11 +78,13 @@ $radius: 5px;
       box-sizing: border-box;
       border-radius: 100%;
       cursor: pointer;
+
       .add {
         font-size: 20px;
         line-height: 45px;
         text-align: center;
       }
+
       .selected {
         border: 2px solid white;
         border-radius: 100%;
@@ -79,14 +94,17 @@ $radius: 5px;
         margin: 2px;
       }
     }
+
     .circle.wrapper {
       margin: 0 5px;
       margin-bottom: 5px;
       flex: 34px 0 0;
     }
+
     .circle.button {
       margin: 0 5px 5px;
     }
+
     .circle.wrapper.color {
       background-image: linear-gradient(45deg, #ccc 25%, transparent 25%),
         linear-gradient(-45deg, #ccc 25%, transparent 25%),
@@ -95,6 +113,7 @@ $radius: 5px;
       background-size: 16px 16px;
       background-position: 0 0, 0 8px, 8px -8px, -8px 0px;
     }
+
     .circle-border {
       border: 1px solid rgba(0, 0, 0, 0.03);
     }
@@ -103,9 +122,11 @@ $radius: 5px;
   .color-picker-wrapper {
     margin: 16px 16px 0 0;
   }
+
   .nav-wrapper {
     overflow: hidden;
     padding: 8px 16px;
+
     .round-button {
       padding: 5px 0;
       width: 40px;
@@ -116,6 +137,7 @@ $radius: 5px;
       line-height: 45px;
     }
   }
+
   .manual-input-wrapper {
     $height: 45px;
     display: flex;
@@ -153,11 +175,18 @@ $radius: 5px;
         margin: 0;
         padding: 0;
       }
+
+      span.error-message {
+        margin-top: 3px;
+        display: inline-block;
+        font-size: 11px;
+        color: #f44336;
+      }
     }
   }
 }
 
-.main-content-container{
+.main-content-container {
   display: flex;
   max-height: 250px;
   overflow: auto;

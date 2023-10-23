@@ -70,6 +70,7 @@ export declare class PanelComponent implements OnInit {
     onClickBack(): void;
     isOutside(event: any): any;
     onOpenedScroll($event: any): void;
+    get disabled(): boolean;
     static ɵfac: i0.ɵɵFactoryDeclaration<PanelComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<PanelComponent, "ngx-colors-panel", never, {}, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<PanelComponent, "ngx-colors-panel", never, {}, {}, never, never, false, never>;
 }

@@ -37,5 +37,5 @@ export declare class NgxColorsTriggerDirective implements ControlValueAccessor {
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<NgxColorsTriggerDirective, never>;
-    static ɵdir: i0.ɵɵDirectiveDeclaration<NgxColorsTriggerDirective, "[ngx-colors-trigger]", never, { "colorsAnimation": "colorsAnimation"; "palette": "palette"; "format": "format"; "position": "position"; "hideTextInput": "hideTextInput"; "hideColorPicker": "hideColorPicker"; "attachTo": "attachTo"; "overlayClassName": "overlayClassName"; "colorPickerControls": "colorPickerControls"; "acceptLabel": "acceptLabel"; "cancelLabel": "cancelLabel"; }, { "change": "change"; "input": "input"; "slider": "slider"; }, never>;
+    static ɵdir: i0.ɵɵDirectiveDeclaration<NgxColorsTriggerDirective, "[ngx-colors-trigger]", never, { "colorsAnimation": "colorsAnimation"; "palette": "palette"; "format": "format"; "position": "position"; "hideTextInput": "hideTextInput"; "hideColorPicker": "hideColorPicker"; "attachTo": "attachTo"; "overlayClassName": "overlayClassName"; "colorPickerControls": "colorPickerControls"; "acceptLabel": "acceptLabel"; "cancelLabel": "cancelLabel"; }, { "change": "change"; "input": "input"; "slider": "slider"; }, never, never, false, never>;
 }

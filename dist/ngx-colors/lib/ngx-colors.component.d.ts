@@ -10,5 +10,5 @@ export declare class NgxColorsComponent implements OnInit, OnDestroy {
     ngOnDestroy(): void;
     color: string;
     static ɵfac: i0.ɵɵFactoryDeclaration<NgxColorsComponent, [null, { host: true; }]>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<NgxColorsComponent, "ngx-colors", never, {}, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<NgxColorsComponent, "ngx-colors", never, {}, {}, never, never, false, never>;
 }

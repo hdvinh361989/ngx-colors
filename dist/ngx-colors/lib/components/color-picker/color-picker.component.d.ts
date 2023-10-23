@@ -32,5 +32,5 @@ export declare class ColorPickerComponent implements OnInit, OnDestroy, AfterVie
     };
     private update;
     static ɵfac: i0.ɵɵFactoryDeclaration<ColorPickerComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<ColorPickerComponent, "color-picker", never, { "color": "color"; "controls": "controls"; }, { "sliderChange": "sliderChange"; "onAlphaChange": "onAlphaChange"; }, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<ColorPickerComponent, "color-picker", never, { "color": "color"; "controls": "controls"; }, { "sliderChange": "sliderChange"; "onAlphaChange": "onAlphaChange"; }, never, never, false, never>;
 }

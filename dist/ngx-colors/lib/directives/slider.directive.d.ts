@@ -20,5 +20,5 @@ export declare class SliderDirective {
     private getY;
     private setCursor;
     static ɵfac: i0.ɵɵFactoryDeclaration<SliderDirective, never>;
-    static ɵdir: i0.ɵɵDirectiveDeclaration<SliderDirective, "[slider]", never, { "rgX": "rgX"; "rgY": "rgY"; "slider": "slider"; }, { "dragEnd": "dragEnd"; "dragStart": "dragStart"; "newValue": "newValue"; }, never>;
+    static ɵdir: i0.ɵɵDirectiveDeclaration<SliderDirective, "[slider]", never, { "rgX": "rgX"; "rgY": "rgY"; "slider": "slider"; }, { "dragEnd": "dragEnd"; "dragStart": "dragStart"; "newValue": "newValue"; }, never, never, false, never>;
 }

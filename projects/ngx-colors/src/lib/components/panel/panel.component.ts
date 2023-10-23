@@ -1,9 +1,6 @@
 import {
   Component,
   OnInit,
-  Input,
-  Output,
-  EventEmitter,
   ChangeDetectorRef,
   ViewChild,
   ElementRef,
@@ -26,7 +23,7 @@ import { formats } from "../../helpers/formats";
 import { NgxColorsTriggerDirective } from "../../directives/ngx-colors-trigger.directive";
 import { Hsva } from "../../clases/formats";
 import { NgxColor } from "../../clases/color";
-import { HEX_REGEX, VALID_INPUT_REGEX } from "../../constants/contants";
+import { HEX_REGEX } from "../../constants/contants";
 
 @Component({
   selector: "ngx-colors-panel",
@@ -392,9 +389,5 @@ export class PanelComponent implements OnInit {
 
   get disabled(): boolean {
     return !HEX_REGEX.test(this.color);
-  }
-
-  get showErrorMessage(): boolean {
-    return !VALID_INPUT_REGEX.test(this.color);
   }
 }

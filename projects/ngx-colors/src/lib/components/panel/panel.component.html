@@ -94,7 +94,7 @@
         (keydown.enter)="accept()"
         #paintInput
       />
-      <span *ngIf="showErrorMessage" class="error-message">
+      <span *ngIf="disabled" class="error-message">
         Color value should be hexa format
       </span>
     </div>

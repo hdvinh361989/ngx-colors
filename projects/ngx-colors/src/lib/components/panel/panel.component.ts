@@ -23,8 +23,7 @@ import { formats } from "../../helpers/formats";
 import { NgxColorsTriggerDirective } from "../../directives/ngx-colors-trigger.directive";
 import { Hsva } from "../../clases/formats";
 import { NgxColor } from "../../clases/color";
-import { COLOR_REGEX } from "../../constants/contants";
-import { rgbaToHex } from "../../helpers/helpers";
+import { HEX_REGEX, RGBA_REGEX } from "../../constants/contants";
 
 @Component({
   selector: "ngx-colors-panel",
@@ -367,7 +366,7 @@ export class PanelComponent implements OnInit {
   accept() {
     if (!this.disabled) {
       this.triggerInstance.setColor(
-        this.color.startsWith("#") ? this.color : rgbaToHex(this.color)
+        this.service.stringToFormat(this.color, ColorFormats.HEX)
       );
       this.triggerInstance.close();
     }
@@ -391,6 +390,8 @@ export class PanelComponent implements OnInit {
   }
 
   get disabled(): boolean {
-    return !COLOR_REGEX.test(this.color.toLowerCase());
+    return (
+      !RGBA_REGEX.test(this.color.toLowerCase()) && !HEX_REGEX.test(this.color)
+    );
   }
 }

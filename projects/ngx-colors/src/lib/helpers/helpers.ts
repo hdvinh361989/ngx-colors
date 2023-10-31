@@ -1,23 +1,26 @@
-import { ColorFormats } from '../enums/formats';
-
+import { ColorFormats } from "../enums/formats";
 
 export function isDescendantOrSame(nodeParent: any, nodeTarget: any): boolean {
-  return nodeParent == nodeTarget || Array.from(nodeParent.childNodes).some(c => isDescendantOrSame(c,nodeTarget))
-
+  return (
+    nodeParent == nodeTarget ||
+    Array.from(nodeParent.childNodes).some((c) =>
+      isDescendantOrSame(c, nodeTarget)
+    )
+  );
 }
-export function getFormat(format:string):ColorFormats{
-  var result:ColorFormats;
-  switch(format){
-    case 'cmyk':
+export function getFormat(format: string): ColorFormats {
+  var result: ColorFormats;
+  switch (format) {
+    case "cmyk":
       result = ColorFormats.CMYK;
       break;
-    case 'rgba':
+    case "rgba":
       result = ColorFormats.RGBA;
       break;
-    case 'hsla':
+    case "hsla":
       result = ColorFormats.HSLA;
       break;
-    case 'hex':
+    case "hex":
       result = ColorFormats.HEX;
       break;
   }
